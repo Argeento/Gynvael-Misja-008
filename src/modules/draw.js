@@ -1,6 +1,8 @@
-const mapEl = document.querySelector('.map')
-const droneEl = document.querySelector('.drone')
-const scale = 4
+const canvas = document.querySelector('.map')
+const ctx = canvas.getContext('2d')
+
+const scale = 6
+const previousMove = {}
 
 export default function draw(data) {
 
@@ -9,9 +11,6 @@ export default function draw(data) {
 		y: data.position.y * scale
 	}
 
-	// drone
-	droneEl.style.transform = `translate(${ center.x - 1 }px, ${ center.y - 1 }px)`
-
 	// walls
 	data.radar.forEach((info, index) => {
 		const wall = {
@@ -19,18 +18,28 @@ export default function draw(data) {
 			y: center.y - Math.cos(info.rad) * info.dist * scale
 		}
 
-		const wallEl = document.createElement('div')
-		wallEl.classList.add('wall')
-		wallEl.style.transform = `translate(${ wall.x }px, ${ wall.y }px)`
-		mapEl.appendChild(wallEl)
-
-		// if dist = infinity
-		if (!info.dist) wallEl.classList.add('wall--hidden')
-
 		// draw clockwise
 		window.setTimeout(() => {
-			wallEl.classList.add('wall--visible')
+
+			// if dist != infinity
+			if (info.dist) {
+				ctx.fillStyle = 'rgb(72, 218, 13)'
+				ctx.fillRect(wall.x, wall.y, 1, 1)
+			}
+
 		}, index * 10)
 
 	})
+
+	// drone
+	ctx.fillStyle = 'rgb(255, 99, 71)';
+	ctx.fillRect(center.x + 2, center.y + 2, 4, 4)
+
+	if (previousMove) {
+		ctx.fillStyle = 'rgb(34, 34, 34)';
+		ctx.fillRect(previousMove.x + 2, previousMove.y + 2, 4, 4)
+	}
+
+	previousMove.x = center.x
+	previousMove.y = center.y
 }

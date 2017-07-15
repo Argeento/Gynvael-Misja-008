@@ -2,10 +2,12 @@ import state from '../state'
 import move from './move'
 
 export default function keydownHandler(e) {
+
+	e.preventDefault()
+
 	if (!state.canMove) return
 	state.canMove = false
 
-	let preventDefault = true
 	switch(e.keyCode) {
 		case 40:
 			move('down')
@@ -19,11 +21,5 @@ export default function keydownHandler(e) {
 		case 39:
 			move('right')
 		break
-		default:
-			preventDefault = false
-	}
-
-	if (preventDefault) {
-		e.preventDefault()
 	}
 }
