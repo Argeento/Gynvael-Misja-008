@@ -2,6 +2,38 @@ body {
 	font-family: 'Anonymous Pro', monospace;
 	font-size: 16px;
 	color: #48da0d;
-	margin: 10px;
+	margin: 15px;
 	background: #222;
+}
+
+.map {
+	position: relative;
+}
+
+.wall {
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	background: #48da0d;
+	opacity: 0.7;
+}
+
+.wall--visible {
+	opacity: 1;
+}
+
+.wall--hidden {
+	display: none;
+}
+
+.drone {
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	background: tomato;
+	z-index: 1;
+}
+
+.drone--transition {
+	transition: all 0.05s;
 }
