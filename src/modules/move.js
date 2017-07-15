@@ -2,6 +2,7 @@ import axios from 'axios'
 
 import draw from './draw'
 import state from '../state'
+import updateUI from './updateUI'
 import showError from './showError'
 import parseResposne from './parseResponse'
 
@@ -19,7 +20,9 @@ export default function move(dir) {
 	}).then(data => {
 		state.moveLink = data.moveLink
 		state.canMove = true
+		state.moveCounter += 1
 		draw(data)
+		updateUI(data)
 	}).catch(err => {
 		state.canMove = true
 		showError('Błąd pobierania danych!')

@@ -2,22 +2,34 @@ body {
 	font-family: 'Anonymous Pro', monospace;
 	font-size: 16px;
 	color: #48da0d;
-	margin: 15px;
+	margin: 0px;
 	background: #222;
 }
 
-body::-webkit-scrollbar-track {
+* {
+	box-sizing: border-box;
+}
+
+.map-wrap {
+	position: relative;
+	top: 60px;
+	overflow: scroll;
+	width: 100%;
+	height: calc(100vh - 60px);
+}
+
+.map-wrap::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: #222;
 }
 
-body::-webkit-scrollbar {
+.map-wrap::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
 	background-color: #F5F5F5;
 }
 
-body::-webkit-scrollbar-thumb, body::-webkit-scrollbar-corner  {
+.map-wrap::-webkit-scrollbar-thumb, .map-wrap::-webkit-scrollbar-corner  {
 	background-color: grey;
 }
 
@@ -28,10 +40,36 @@ body::-webkit-scrollbar-thumb, body::-webkit-scrollbar-corner  {
 	background: #222;
 	width: 100%;
 	border-bottom: 1px solid grey;
-	padding-left: 20px;
+	list-style-type: none;
+	display: flex;
+	margin: 0;
+	padding: 10px 0;
+	z-index: 1;
+}
+
+.control__item {
+	padding: 10px 40px;
+	text-align: center;
+	line-height: 16px;
 }
 
 .error {
 	color: tomato;
 	padding-left: 20px;
+}
+
+.info {
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+	z-index: 1;
+}
+
+.info a {
+	color: grey;
+	text-decoration: none;
+}
+
+.info a:hover, .info a:focus {
+	text-decoration: underline;
 }

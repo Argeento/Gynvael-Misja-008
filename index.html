@@ -9,11 +9,29 @@
 
 </head>
 <body>
-	<div class="control">
-		<p>Sterowanie: ← → ↑ ↓ <span class="error"></span></p>
+	<ul class="control">
+		<li class="control__item">
+			SCAN DRONE M008
+		</li>
+		<li class="control__item">
+			Sterowanie: ← → ↑ ↓
+		</li>
+		<li class="control__item">
+			Pozycja: [<span class="position-x"></span>, <span class="position-y"></span>]
+		</li>
+		<li class="control__item">
+			Dystans: <span class="distance">0</span>m
+		</li>
+		<li class="control__item">
+			<span class="error"></span>
+		</li>
+	</ul>
+	<div class="info">
+		by <a href="https://github.com/Argeento">argeento</a>
 	</div>
-	<canvas class="map" width="5000" height="5000"></canvas>
-
+	<div class="map-wrap">
+		<canvas class="map" width="5000" height="5000"></canvas>
+	</div>
 	<script src="dist/app.js"></script>
 </body>
 </html>
