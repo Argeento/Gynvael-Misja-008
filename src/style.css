@@ -33,7 +33,3 @@ body {
 	background: tomato;
 	z-index: 1;
 }
-
-.drone--transition {
-	transition: all 0.05s;
-}

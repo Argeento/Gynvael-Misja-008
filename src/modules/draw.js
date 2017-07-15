@@ -11,9 +11,6 @@ export default function draw(data) {
 
 	// drone
 	droneEl.style.transform = `translate(${ center.x - 1 }px, ${ center.y - 1 }px)`
-	window.setTimeout(() => {
-		droneEl.classList.add('drone--transition')
-	}, 360)
 
 	// walls
 	data.radar.forEach((info, index) => {
