@@ -2,6 +2,7 @@ import './style.css'
 import axios from 'axios'
 import parseResposne from './modules/parseResponse'
 import draw from './modules/draw'
+import showError from './modules/showError'
 
 axios.defaults.baseURL = 'http://gynvael.coldwind.pl/misja008_drone_io/scans/'
 axios.defaults.timeout = 1000
@@ -44,6 +45,7 @@ function move(dir) {
 	const link = currentMoveLink[dir]
 	if (link === 'not possible') {
 		canMove = true
+		showError('Ściana!')
 		return
 	}
 
@@ -55,6 +57,7 @@ function move(dir) {
 		draw(data)
 	}).catch(err => {
 		canMove = true
+		showError('Błąd pobierania danych!')
 		console.error(err)
 	})
 }

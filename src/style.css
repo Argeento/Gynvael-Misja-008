@@ -33,3 +33,8 @@ body {
 	background: tomato;
 	z-index: 1;
 }
+
+.error {
+	color: tomato;
+	padding-left: 20px;
+}
