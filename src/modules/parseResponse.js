@@ -6,14 +6,14 @@ export default function parseResposne(res) {
   lines.shift()
 
   // get position
-  const [x, y] = lines[0].split(' ')
+  const [x, y] = lines[0].split(' ').map(nr => window.parseInt(nr))
 
   // get radar info
   const radar = []
   for (let i = 0; i < 36; i++) {
     radar.push({
       rad: i * 10 * Math.PI / 180,
-      dist: lines[i + 1]
+      dist: window.parseFloat(lines[i + 1])
     })
   }
 
