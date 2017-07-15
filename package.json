@@ -1,0 +1,35 @@
+{
+  "name": "gynvael-misja-008",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --progress",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Argeento/Gynvael-Misja-008.git"
+  },
+  "keywords": [
+    "dron",
+    "API",
+    "radar",
+    "map"
+  ],
+  "author": "Adrian Wieprzkowicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Argeento/Gynvael-Misja-008/issues"
+  },
+  "homepage": "https://github.com/Argeento/Gynvael-Misja-008#readme",
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
