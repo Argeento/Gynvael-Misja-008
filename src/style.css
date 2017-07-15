@@ -1,4 +1,7 @@
 body {
-	margin: 0;
+	font-family: 'Anonymous Pro', monospace;
+	font-size: 16px;
+	color: #48da0d;
+	margin: 10px;
 	background: #222;
 }
