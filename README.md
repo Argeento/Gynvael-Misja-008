@@ -33,3 +33,9 @@ centralnej komnaty.
 
 P.S. Rozwiązanie zadania przedstawie na początku kolejnego livestreama.
 ```
+
+## Rozwiązanie
+![Rozwiązanie 008](http://adrian.otos.pl/gynvael/008/solution.png)
+
+## Online GUI
+Dronem można polatać pod adresem [http://adrian.otos.pl/gynvael/008/](http://adrian.otos.pl/gynvael/008/)
