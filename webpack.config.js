@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const BabiliPlugin = require('babili-webpack-plugin')
 const production = process.env.NODE_ENV === 'production'
 
 module.exports = {
@@ -21,10 +22,8 @@ module.exports = {
 		]
 	},
 	plugins: production ? [
-		new webpack.optimize.UglifyJsPlugin({
-			compress: { warnings: false }
-		})
-	 ] : [
-		 new webpack.HotModuleReplacementPlugin()
-	 ]
+		new BabiliPlugin()
+	] : [
+		new webpack.HotModuleReplacementPlugin()
+	]
 }
