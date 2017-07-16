@@ -27,5 +27,11 @@ export default function move(dir) {
 		state.canMove = true
 		showError('Błąd pobierania danych!')
 		console.error(err)
+
+		if (dir === 'start') {
+			window.setTimeout(() => {
+				move('start')
+			}, 1500)
+		}
 	})
 }
