@@ -8,6 +8,8 @@ import parseResposne from './parseResponse'
 
 export default function move(dir) {
 
+	state.canMove = false
+
 	const link = state.moveLink[dir]
 	if (link === 'not possible') {
 		state.canMove = true

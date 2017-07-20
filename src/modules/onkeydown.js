@@ -6,7 +6,6 @@ export default function keydownHandler(e) {
 	e.preventDefault()
 
 	if (!state.canMove) return
-	state.canMove = false
 
 	switch(e.keyCode) {
 		case 40:
